@@ -1,0 +1,81 @@
+{
+  "created_utc": "2026-08-20T11:43:54.461412+00:00",
+  "method": "Mean of final 3 valid SQM magnitudes; BTS irradiance divided by pi; fit m = a - 2.5 log10(Le); derive L0 = 10^(a/2.5)",
+  "bts_file": "D:\\Instruments_And_ExperimentalApproaches\\SQMs\\REFERENCES\\BTS\\ref_bts_with_minisphere_and_housing.xls",
+  "sqm_data_dir": "D:\\Instruments_And_ExperimentalApproaches\\SQMs\\DATA\\with_housing",
+  "selected_intensities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "used_matched_intensities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "excluded_matched_intensities": [],
+  "unmatched_bts_intensities": [],
+  "unmatched_sqm_intensities": [],
+  "radiance_model": {
+    "predictor": "integrated_radiance_360_830_W_m2_sr",
+    "n": 7,
+    "model": "m = a - 2.5 log10(Le)",
+    "equivalent_model": "m = -2.5 log10(Le / L0)",
+    "fixed_slope": -2.5,
+    "intercept_a": 5.704421990981509,
+    "reference_radiance_L0": 191.32371115047937,
+    "residual_standard_deviation_magnitude": 0.012014193583430333,
+    "standard_uncertainty_intercept_a": 0.004540938346392085,
+    "standard_uncertainty_L0": 0.800184402739702,
+    "relative_standard_uncertainty_L0": 0.004182358777842979,
+    "rmse_magnitude": 0.01112298190209822,
+    "r2_fixed_slope": 0.9997327963860487
+  },
+  "photopic_luminance_model": {
+    "predictor": "photopic_luminance_cd_m2",
+    "n": 7,
+    "model": "m = a - 2.5 log10(Le)",
+    "equivalent_model": "m = -2.5 log10(Le / L0)",
+    "fixed_slope": -2.5,
+    "intercept_a": 10.885105642547515,
+    "reference_radiance_L0": 22596.556248804063,
+    "residual_standard_deviation_magnitude": 0.014265454103453437,
+    "standard_uncertainty_intercept_a": 0.0053918348424490965,
+    "standard_uncertainty_L0": 112.21593124344999,
+    "relative_standard_uncertainty_L0": 0.004966063412843676,
+    "rmse_magnitude": 0.013207244141360016,
+    "r2_fixed_slope": 0.9996232751413671
+  },
+  "illuminance_model": {
+    "predictor": "illuminance_lx",
+    "n": 7,
+    "model": "m = a - 2.5 log10(Le)",
+    "equivalent_model": "m = -2.5 log10(Le / L0)",
+    "fixed_slope": -2.5,
+    "intercept_a": 12.127997761763686,
+    "reference_radiance_L0": 70990.31523942303,
+    "residual_standard_deviation_magnitude": 0.014263836050359283,
+    "standard_uncertainty_intercept_a": 0.005391223275864063,
+    "standard_uncertainty_L0": 352.5024202034091,
+    "relative_standard_uncertainty_L0": 0.0049655001392028475,
+    "rmse_magnitude": 0.013205746115282947,
+    "r2_fixed_slope": 0.9996233605962357
+  },
+  "cie_photopic_file": "D:\\Instruments_And_ExperimentalApproaches\\SQMs\\PhotometryCIE\\CIE_sle_photopic.csv",
+  "photopic_calculation": "Lv = 683 integral Le_lambda(lambda) V(lambda) dlambda",
+  "photopic_luminance_unit": "cd m^-2",
+  "notes": [
+    "The radiance model is the primary characterization.",
+    "The lux model is secondary because illuminance is not the SQM measurand.",
+    "Changing incandescent-lamp intensity changes spectral shape, so this characterisation is source-specific.",
+    "With few intensity levels, fit statistics are descriptive and should not be treated as a full uncertainty evaluation."
+  ]
+}

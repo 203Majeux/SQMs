@@ -1,0 +1,1 @@
+distance sqm minisphere diam 4.75cm with 17.8cm

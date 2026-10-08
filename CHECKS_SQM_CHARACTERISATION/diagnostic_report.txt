@@ -1,0 +1,38 @@
+SQM CHARACTERISATION DIAGNOSTIC REPORT
+==========================================
+
+Fitted L0: 1.61985377e+04 cd m^-2
+Literature L0: 1.08000000e+05 cd m^-2
+
+[PASS] Spectrum vs BTS integral sensor/pi
+  max difference 0.00319%
+  Checks spectral units, selected BTS column, V(lambda) integration and E=pi L assumption.
+
+[PASS] Per-level L0 stability
+  CV 0.802%
+  A trend or large spread indicates nonlinearity, changing spectral mismatch or geometry drift.
+
+[PASS] Free fitted slope
+  slope -2.50918, R2 0.999925
+  The free slope should be near -2.5 if the constrained magnitude law is adequate.
+
+[PASS] Residual versus luminance
+  Pearson r -0.3899
+  A strong trend suggests nonlinearity or saturation.
+
+[PASS] Residual versus CCT
+  Pearson r -0.4955
+  A strong trend suggests source-spectrum dependence.
+
+[PASS] Frequency versus luminance
+  R2 0.999962
+  Checks SQM raw-signal linearity; spectral changes may also affect it.
+
+[PASS] 0.00 mpsas saturation
+  False
+  Zero-magnitude readings should be excluded as possible upper-limit/saturation values.
+
+[INFO] Experimental versus literature L0
+  fit/literature 0.14999
+  Interpret only after the independent luminance check passes; SQM and CIE photopic passbands differ.
+

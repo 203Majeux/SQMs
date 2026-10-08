@@ -1,0 +1,72 @@
+{
+  "selected_intensities": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "fitted_L0_cd_m2": 16198.537701084791,
+  "literature_L0_cd_m2": 108000.0,
+  "fitted_over_literature": 0.14998646019522954,
+  "free_fit": {
+    "n": 4,
+    "slope": -2.5091792853409736,
+    "intercept": 10.534736575428482,
+    "r2": 0.9999253578048529
+  },
+  "L0_coefficient_of_variation_percent": 0.8020168887644776,
+  "spectrum_integral_max_difference_percent": 0.0031853973216700027,
+  "fixed_residual_vs_log_luminance_r": -0.3899059541208049,
+  "fixed_residual_vs_CCT_r": -0.49550138405711713,
+  "frequency_vs_luminance_R2": 0.9999622447034608,
+  "checks": [
+    {
+      "check": "Spectrum vs BTS integral sensor/pi",
+      "status": "PASS",
+      "value": "max difference 0.00319%",
+      "meaning": "Checks spectral units, selected BTS column, V(lambda) integration and E=pi L assumption."
+    },
+    {
+      "check": "Per-level L0 stability",
+      "status": "PASS",
+      "value": "CV 0.802%",
+      "meaning": "A trend or large spread indicates nonlinearity, changing spectral mismatch or geometry drift."
+    },
+    {
+      "check": "Free fitted slope",
+      "status": "PASS",
+      "value": "slope -2.50918, R2 0.999925",
+      "meaning": "The free slope should be near -2.5 if the constrained magnitude law is adequate."
+    },
+    {
+      "check": "Residual versus luminance",
+      "status": "PASS",
+      "value": "Pearson r -0.3899",
+      "meaning": "A strong trend suggests nonlinearity or saturation."
+    },
+    {
+      "check": "Residual versus CCT",
+      "status": "PASS",
+      "value": "Pearson r -0.4955",
+      "meaning": "A strong trend suggests source-spectrum dependence."
+    },
+    {
+      "check": "Frequency versus luminance",
+      "status": "PASS",
+      "value": "R2 0.999962",
+      "meaning": "Checks SQM raw-signal linearity; spectral changes may also affect it."
+    },
+    {
+      "check": "0.00 mpsas saturation",
+      "status": "PASS",
+      "value": "False",
+      "meaning": "Zero-magnitude readings should be excluded as possible upper-limit/saturation values."
+    },
+    {
+      "check": "Experimental versus literature L0",
+      "status": "INFO",
+      "value": "fit/literature 0.14999",
+      "meaning": "Interpret only after the independent luminance check passes; SQM and CIE photopic passbands differ."
+    }
+  ]
+}

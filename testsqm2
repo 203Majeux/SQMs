@@ -1,0 +1,39 @@
+import socket
+import time
+
+IP = "192.168.1.160"
+PORT = 10001
+
+for command in (b"ix", b"cx", b"rx", b"ux"):
+    print(f"\nTesting {command!r}")
+
+    try:
+        with socket.create_connection((IP, PORT), timeout=5) as sock:
+            sock.settimeout(5)
+            print("  TCP connected")
+
+            time.sleep(0.5)
+            sock.sendall(command)
+            print(f"  Sent {command!r}")
+
+            try:
+                data = sock.recv(2048)
+
+                if data == b"":
+                    print("  RESULT: device closed the TCP connection")
+                else:
+                    print(f"  RESULT: received {len(data)} bytes")
+                    print(f"  Raw: {data!r}")
+                    print(
+                        "  Text:",
+                        data.decode("ascii", errors="replace").strip()
+                    )
+
+            except socket.timeout:
+                print("  RESULT: connection remained open, but no data arrived")
+
+    except ConnectionRefusedError:
+        print("  RESULT: TCP connection refused")
+
+    except OSError as exc:
+        print(f"  RESULT: network error: {exc}")

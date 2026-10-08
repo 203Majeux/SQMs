@@ -1,0 +1,9 @@
+check,status,value,meaning
+Spectrum vs BTS integral sensor/pi,PASS,max difference 0.00319%,"Checks spectral units, selected BTS column, V(lambda) integration and E=pi L assumption."
+Per-level L0 stability,PASS,CV 0.802%,"A trend or large spread indicates nonlinearity, changing spectral mismatch or geometry drift."
+Free fitted slope,PASS,"slope -2.50918, R2 0.999925",The free slope should be near -2.5 if the constrained magnitude law is adequate.
+Residual versus luminance,PASS,Pearson r -0.3899,A strong trend suggests nonlinearity or saturation.
+Residual versus CCT,PASS,Pearson r -0.4955,A strong trend suggests source-spectrum dependence.
+Frequency versus luminance,PASS,R2 0.999962,Checks SQM raw-signal linearity; spectral changes may also affect it.
+0.00 mpsas saturation,PASS,False,Zero-magnitude readings should be excluded as possible upper-limit/saturation values.
+Experimental versus literature L0,INFO,fit/literature 0.14999,Interpret only after the independent luminance check passes; SQM and CIE photopic passbands differ.

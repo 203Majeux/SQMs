@@ -1,0 +1,64 @@
+{
+  "created_utc": "2026-08-21T07:48:09.801222+00:00",
+  "instrument": "SQM1",
+  "selected_responsivity_column": "SQM_1_relative_spectral_response",
+  "selected_intensities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "inputs": {
+    "responsivity": "D:\\Instruments_And_ExperimentalApproaches\\SQMs\\sqmTotal_results\\sqm_characterization.csv",
+    "data_dir": "D:\\Instruments_And_ExperimentalApproaches\\SQMs\\DATA\\sqm1_with_housing",
+    "bts": "D:\\Instruments_And_ExperimentalApproaches\\SQMs\\REFERENCES\\BTS\\ref_bts_with_minisphere_and_housing.xls",
+    "cie_photopic": "D:\\Instruments_And_ExperimentalApproaches\\SQMs\\PhotometryCIE\\CIE_sle_photopic.csv"
+  },
+  "sqm_band_magnitude_model": {
+    "n": 7,
+    "intercept_a": 8.652685266067746,
+    "zero_quantity_q0": 2891.1731795281594,
+    "rmse_mag": 0.15363109616150059,
+    "residual_std_mag": 0.16594054957247473
+  },
+  "photopic_luminance_model": {
+    "n": 7,
+    "intercept_a": 14.891727515159983,
+    "zero_quantity_q0": 905088.4150832242,
+    "rmse_mag": 0.1467202865234287,
+    "residual_std_mag": 0.15847602202574113
+  },
+  "frequency_calibration": {
+    "available": true,
+    "method": "fitted f = K*L_SQM + fD",
+    "K_Hz_per_W_m2_sr": 28383.51322598307,
+    "G_W_m2_sr_per_Hz": 3.52317203313849e-05,
+    "dark_frequency_Hz": 5779.516814657085,
+    "r2": 0.9695179614728667,
+    "AB_reference_radiance_W_m2_sr": 427.54794498280006,
+    "AB_frequency_zero_point_mag_arcsec2": 17.71012743361328
+  },
+  "AB_reference_radiance_W_m2_sr": 427.54794498280006,
+  "measurement_geometry": {
+    "diameter_m": 0.05,
+    "radius_m": 0.025,
+    "distance_m": 0.12,
+    "half_angle_deg": 11.768288932020646,
+    "full_angle_deg": 23.53657786404129,
+    "projected_solid_angle_sr": 0.1306818907483275,
+    "geometric_solid_angle_sr": 0.1320699178677618,
+    "radiance_multiplier_sr_inverse": 7.652169663858328,
+    "factor_relative_to_E_over_pi": 24.04
+  },
+  "irradiance_to_radiance_equation": "L_lambda = E_lambda / [pi*r^2/(d^2+r^2)]",
+  "normalization_note": "T_SQM(lambda) is normalized to 1 at its maximum, matching the paper convention.",
+  "equations": {
+    "sqm_band_radiance": "L_SQM = integral L_lambda*T_SQM(lambda) dlambda",
+    "frequency": "L_SQM = G*(f-fD)",
+    "magnitude": "m_SQM = -2.5 log10(L_SQM/L0)",
+    "AB": "m_AB = ZP_AB - 2.5 log10(f-fD)"
+  }
+}

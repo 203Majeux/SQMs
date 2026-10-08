@@ -1,0 +1,54 @@
+{
+  "created_utc": "2026-09-22T06:35:38.912331+00:00",
+  "instrument": "SQM2",
+  "sqm_number": 2,
+  "measurement_folder": "D:\\Instruments_And_ExperimentalApproaches\\SQMs\\DATA\\sqm2_with_housing",
+  "responsivity_column": "SQM_2_relative_spectral_response",
+  "intensities": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "geometry": {
+    "diameter_m": 0.0475,
+    "radius_m": 0.02375,
+    "distance_m": 0.178,
+    "half_angle_deg": 7.599914369451745,
+    "full_angle_deg": 15.19982873890349,
+    "projected_solid_angle_sr": 0.054950730952146136,
+    "geometric_solid_angle_sr": 0.05519314648422802,
+    "radiance_multiplier_sr_inverse": 18.19812007361377
+  },
+  "L0_model": {
+    "n": 6,
+    "intercept_a": 7.636712842712554,
+    "L0_W_m2_sr": 1134.1882325801103,
+    "rmse_mag": 0.004580960241838596,
+    "residual_std_mag": 0.005018190518978641
+  },
+  "frequency_model": {
+    "n": 6,
+    "method": "nonnegative constrained fit; fD at zero boundary",
+    "dark_frequency_source": "constrained regression boundary",
+    "K_Hz_per_W_m2_sr": 85095.07294766842,
+    "G_W_m2_sr_per_Hz": 1.1751561698701143e-05,
+    "fD_Hz": 0.0,
+    "fD_at_lower_bound": true,
+    "unconstrained_K_Hz_per_W_m2_sr": 86616.8075761654,
+    "unconstrained_intercept_Hz": -5228.5830602056985,
+    "unconstrained_fit_R2": 0.9999489542323257,
+    "unconstrained_fit_RMSE_Hz": 501.09936942462537,
+    "r2": 0.9996209568465586,
+    "rmse_Hz": 1365.4893420315693
+  },
+  "equations": {
+    "spectral_radiance": "L_lambda = E_lambda / Omega_projected",
+    "projected_solid_angle": "Omega_projected = pi*r^2/(d^2+r^2)",
+    "weighted_radiance": "L_SQM = integral L_lambda*T_SQM(lambda) dlambda",
+    "magnitude": "m_SQM = -2.5 log10(L_SQM/L0)",
+    "frequency": "L_SQM = G*(f-fD)"
+  }
+}
